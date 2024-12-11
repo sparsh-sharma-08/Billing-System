@@ -36,10 +36,44 @@ def list_cart(lists):
     print("\n")
 
 def update_cart(lists):
-    pass
+    if not lists:
+        print("Cart is empty. Nothing to update!")
+        return
+    
+    list_cart(lists)
+
+    try:
+        index=int(input("Enter the list number to update: "))
+        if 1<=index<=len(lists):
+            item_name=input("Enter the item name: ")
+            item_price=float(input("Enter price of item: "))
+            trans_time=time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+            lists[index-1]={"Item name":item_name, "Item price": item_price, "Current Time":trans_time}
+            save_data(lists)
+        else:
+            print("Invalid Command!")
+    except ValueError:
+        print("Invalid input! Please enter a valid number!")
 
 def delete_item(lists):
-    pass
+    if not lists:
+        print("Cart is empty. Nothing to delete!")
+        return
+    
+    list_cart(lists)
+
+    try:
+        index=int(input("Enter the list number to delete"))
+        if 1<=index<=len(lists):
+            deleted_item=lists.pop(index-1)
+            save_data(lists)
+            print(f"Deleted item: {deleted_item['Item name']} (₹{deleted_item['Item price']})")
+            print("Updated cart:")
+            list_cart(lists)
+        else:
+            print("invalid index selected for deletion!")
+    except ValueError:
+        print("Invalid input! Please enter a valid number!")
 
 def bill_calc(lists):
     pass
