@@ -1,0 +1,1 @@
+[{"Item name": "milk", "Item price": 23.0, "Current Time": "2024-12-11 23:33:37"}, {"Item name": "curd", "Item price": 25.0, "Current Time": "2024-12-11 23:34:06"}, {"Item name": "egg tray", "Item price": 215.0, "Current Time": "2024-12-11 23:34:18"}, {"Item name": "bread", "Item price": 50.0, "Current Time": "2024-12-11 23:33:57"}]
