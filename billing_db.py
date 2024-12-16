@@ -141,7 +141,8 @@ def view_items():
 
 # Generate the bill
 def generate_bill():
-    rows = display_items() 
+    cursor.execute("SELECT rowid, product, quantity, price FROM bill")
+    rows = cursor.fetchall()  
     if not rows:
         print("\nNo items in the cart to generate a bill!")
         return
