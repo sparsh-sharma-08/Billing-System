@@ -57,7 +57,7 @@ def print_table(rows, show_total=False):
     print("-" * (serial_width + product_width + quantity_width + price_width + 10))
 
     if show_total:
-        print(f"Total Amount:: ₹{total_amount}") 
+        print(f"Total Amount: ₹{total_amount}") 
 
     return total_amount 
 
@@ -145,7 +145,8 @@ def generate_bill():
     if not rows:
         print("\nNo items in the cart to generate a bill!")
         return
-    
+    total = print_table(rows, show_total=True)  
+    # print(f"Total Amount: ₹{total}")
     print(f"Bill Generated At: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")  
     print("\nThank you for shopping with us!")
 
